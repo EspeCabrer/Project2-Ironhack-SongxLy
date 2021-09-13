@@ -55,6 +55,8 @@ router.get('/albums/:artistId', (req, res, next) => {
        })
     });
 
+// Get Tracks
+
 router.get('/tracks/:albumID', (req, res, next) => {
   let albumID = req.params.albumID;
 
@@ -63,7 +65,7 @@ router.get('/tracks/:albumID', (req, res, next) => {
           .then(track => {
 
               let tracksArr = (track.body.items)
-               
+              console.log(tracksArr)
              res.render('search/tracks', {tracksArr})
        })
 
@@ -76,20 +78,26 @@ router.get('/lyric/:artistName/:trackName', (req, res) => {
   let artistName = req.params.artistName;
   let trackName = req.params.trackName;
 
+  let artistNameClean = artistName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+  let trackNameClean = trackName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+
   lyricsApi
-        .getLyrics(artistName, trackName)
+        .getLyrics(artistNameClean, trackNameClean)
         .then(lyricObj => {
 
           const lyric = lyricObj.data.lyrics;
+          console.log(artistNameClean)
 
-          console.log(lyric)
-
-          messagetoSend = lyricObj.data.lyrics.replace("\n", "<br/>")
+          console.log("NO ES UN ERROR :", lyric)
 
 
           res.render('search/lyrics', {lyric})
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+          console.log (artistNameClean)
+          console.log("ERROR: ", err)})
 
   
 
@@ -97,8 +105,6 @@ router.get('/lyric/:artistName/:trackName', (req, res) => {
 
 
 })
-
-/* https://api.lyrics.ovh/v1/artist/title */
 
 
 

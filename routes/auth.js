@@ -14,6 +14,9 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+
+////SIGNUP/////
+
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
@@ -46,7 +49,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
   */
 
   // Search the database for a user with the username submitted in the form
-  User.findOne({ username }).then((found) => {
+  User
+    .findOne({ username })
+    .then((found) => {
     // If the user is found, send the message username is taken
     if (found) {
       return res
@@ -88,6 +93,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
       });
   });
 });
+
+
+//// LOGIN ////
 
 router.get("/login", isLoggedOut, (req, res) => {
   res.render("auth/login");
