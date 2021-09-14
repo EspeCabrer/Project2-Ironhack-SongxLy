@@ -6,9 +6,9 @@
 
 }
 
-body {
-  min-height: 100vh; 
-}
+/* body {
+  min-height: 90vh; 
+} */
 
 
 .bd-placeholder-img {
@@ -34,6 +34,7 @@ body {
 
 .site-header {
     background-color: #61053F;
+   /*  position: fixed; */
 /*     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px) */;
 }
@@ -50,6 +51,11 @@ body {
 }
 
 /* INDEX VIEW */
+
+/* .ppal-page {
+    height: 90vh;
+
+} */
 
 .index-description {
     background-image: url(../images/bg-luces.jpeg);
@@ -87,8 +93,7 @@ body {
 .search-page{
         
         background-image: url(/images/bg-abstract-blue.jpeg);
-        width: 100vw;
-        height: 100vh;
+        height: 90vh;
         background-size: cover;
         color:rgb(98,32,70);
         display: flex;
@@ -127,16 +132,17 @@ body {
 
 /* ARTISTS VIEW */
 .artists-page  {
-background-color: rgb(245, 223, 204);
+background-color: rgb(46,51,56);
+padding: 20px;
 }
 
 .artists-page h2, .albums-page h2, .tracks-page h2, .lyric-page h2 {
     padding: 30px 0 0 30px;
     font-size: 3em;
     text-align: center;
+    color: rgba(255, 255, 255, 0.5);
 }
 .artists-page h5, .albums-page h5{
-    color: rgb(98,32,70);
     font-size: 1.5em;
 }
 
@@ -145,8 +151,13 @@ background-color: rgb(245, 223, 204);
 }
 
 .albums-page{
-    background-color:rgb(241, 222, 181);
+    background-color:rgb(46,51,56);
+    padding: 20px;
 }
+
+/* .albums-page .card{
+    background-color: rgb(250, 180, 177);
+} */
 
 /* TRACKS VIEW */
 
@@ -155,11 +166,12 @@ background-color: rgb(245, 223, 204);
 }
 
 .tracks-page {
-    background-color: rgb(46,51,56)
+    background-color: rgb(46,51,56);
+    padding: 20px;
 }
 
 .tracks-page h2 {
-    padding: 30px 0 0 30px;
+    padding: 30px 0 30px 30px;
     margin-bottom: 20px;
     font-size: 3em;
     text-align: center; 

@@ -24,19 +24,22 @@ const spotifyApi = new SpotifyWebApi({
 router.get("/artists", (req, res, next) => {
 
     const artistObj = req.query
-    const artistName = artistObj.artist
+    const artistsNameSearch = artistObj.artist
 
-    spotifyApi
-        .searchArtists(artistName)
-        .then(data => {
+    let totalArtistsArr = spotifyApi
+                                .searchArtists(artistsNameSearch)
+                                .then(data => {
 
-            let totalArtistsArr = (data.body.artists.items)
+                                let totalArtistsArr = (data.body.artists.items)
 
-            console.log(totalArtistsArr)
+                                console.log(totalArtistsArr)
 
-           res.render('search/artists-search-results', {totalArtistsArr})
+                                return totalArtistsArr
         })
         .catch(err => console.log('The error while searching artists occurred: ', err))
+
+        Promise.all([artistsNameSearch, totalArtistsArr])
+          .then(([artistsNameSearch, totalArtistsArr]) => res.render('search/artists-search-results', {artistsNameSearch, totalArtistsArr}))
   }) 
 
 
@@ -53,6 +56,7 @@ router.get('/albums/:artistId', (req, res, next) => {
 
               res.render('search/albums', {totalAlbumsArr})
        })
+       
     });
 
 // Get Tracks
