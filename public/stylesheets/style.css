@@ -1,8 +1,13 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family:Georgia, 'Times New Roman', Times, serif
+
+}
+
 body {
-  padding: 0px;
-  margin: 0px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  
+  min-height: 100vh; 
 }
 
 
@@ -25,9 +30,10 @@ body {
     max-width: 960px;
 }
 
+/* Layaut */
 
 .site-header {
-    background-color: purple;
+    background-color: #61053F;
 /*     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px) */;
 }
@@ -43,9 +49,83 @@ body {
     text-decoration: none;
 }
 
-.index-login {
-  background-color:rgb(132, 253, 255);
+/* INDEX VIEW */
+
+.index-description {
+    background-image: url(../images/bg-luces.jpeg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
+
+.index-description h1{
+    font-size: 82px;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.index-description p {
+    font-size: 27px;
+}
+.index-page {
+    background-image: url(../images/bg-auriculares.jpeg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+/* .index-search{
+    background-image: url(../images/abstract-yellow.jpeg);
+    background-size: cover;
+} */
+
+/* .index-login {
+  background-color: #FFD399;
+} */
+
+/* SEARCH VIEW */
+.search-page{
+        
+        background-image: url(/images/bg-abstract-blue.jpeg);
+        width: 100vw;
+        height: 100vh;
+        background-size: cover;
+        color:rgb(98,32,70);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items:center;
+      }
+
+.search-page form {
+    padding: 30px;
+
+}
+.search-page input{
+    width: 400px;
+    height: 50px;
+    border-radius: 20px;
+}
+
+.search-page h2{
+    font-size: 62px;
+}
+
+.search-page button{
+    width: 200px;
+    height: 50px;
+}
+      
+      /* .pag-ppal a{
+        border: 1px solid black;
+        margin: 30px;
+      }
+      .pag-ppal h1{
+        font-size: 8em;
+      } */
+      
+
+
 
 .card {
     width: 18rem
