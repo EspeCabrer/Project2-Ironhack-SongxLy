@@ -1,9 +1,26 @@
- <div class= "totalAlbums card">
+{{!--  <div class= "totalAlbums card">
     <div class="row">
         {{#each totalAlbumsArr}}
              <div class="name">{{this.name}}</div>
              <img class="img" src="{{this.images.[0].url}}" alt="{{this.name}}">
              <a href="/tracks/{{this.id}}">Tracks</a>         
+        {{/each}}
+    </div>
+</div> --}}
+
+<div class= "albums-page">
+    <h2>ALBUMS</h5>
+    <div class= "totalAlbums row row-cols-1 row-cols-md-3 g-4 text-center m-3">
+        {{#each totalAlbumsArr}}
+         <div class= "col">
+            <div class="card border-info mb-3">
+                <div class= "card-header bg-dark">
+                    <h5 class="text-light">{{this.name}}</h5>
+                </div>
+                 <img class="img" src="{{this.images.[0].url}}" alt="{{this.name}}">
+                 <a class ="btn btn-dark" href="/tracks/{{this.id}}">Ver canciones</a>   
+            </div>
+        </div>
         {{/each}}
     </div>
 </div>

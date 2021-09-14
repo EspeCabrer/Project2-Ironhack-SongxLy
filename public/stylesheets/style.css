@@ -125,10 +125,51 @@ body {
       } */
       
 
+/* ARTISTS VIEW */
+.artists-page  {
+background-color: rgb(245, 223, 204);
+}
 
+.artists-page h2, .albums-page h2, .tracks-page h2, .lyric-page h2 {
+    padding: 30px 0 0 30px;
+    font-size: 3em;
+    text-align: center;
+}
+.artists-page h5, .albums-page h5{
+    color: rgb(98,32,70);
+    font-size: 1.5em;
+}
 
 .card {
-    width: 18rem
+    width: 18rem;
+}
+
+.albums-page{
+    background-color:rgb(241, 222, 181);
+}
+
+/* TRACKS VIEW */
+
+.tracks-page ul {
+    list-style: none;
+}
+
+.tracks-page {
+    background-color: rgb(46,51,56)
+}
+
+.tracks-page h2 {
+    padding: 30px 0 0 30px;
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-align: center; 
+    color: rgb(198, 232, 226);
+}
+
+/* LYRIC-PAGE */
+
+.lyric-page{
+    height: 95vh;
 }
 
 

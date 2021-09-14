@@ -83,27 +83,27 @@ router.get('/lyric/:artistName/:trackName', (req, res) => {
   let trackNameClean = trackName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
 
-  lyricsApi
-        .getLyrics(artistNameClean, trackNameClean)
-        .then(lyricObj => {
+  let lyric = lyricsApi
+                    .getLyrics(artistNameClean, trackNameClean)
+                    .then(lyricObj => {
 
-          const lyric = lyricObj.data.lyrics;
-          console.log(artistNameClean)
+                    const lyric = lyricObj.data.lyrics;
+         /*  console.log("lyricObj: ",lyricObj.data) */
 
-          console.log("NO ES UN ERROR :", lyric)
+         /*  const replaced = lyric.replace(/\n/g, '<br >')
+          console.log("replaced :", replaced) */
 
+                      return lyric
 
-          res.render('search/lyrics', {lyric})
+         /*  res.render('search/lyrics', {lyric}) */
         })
         .catch(err => {
           console.log (artistNameClean)
-          console.log("ERROR: ", err)})
+          console.log("ERROR: ", err)
+        })
 
-  
-
-
-
-
+        Promise.all([artistName, trackName, lyric])
+          .then(([artistName, trackName, lyric]) => res.render("search/lyrics", {artistName, trackName, lyric}))
 })
 
 

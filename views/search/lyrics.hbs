@@ -1,5 +1,21 @@
-<h2>Lyric</h2>
-<p>
-    {{lyric}}
-</p>
+<div class="lyric-page d-flex justify-content-center align-items-center">
+    <div class="content-lyric-page d-flex justify-content-between">
+        <div class="d-flex flex-column justfy-column justify-content-evenly text-center bg-light p-5">
+            <div>
+                <h2>{{artistName}}</h2>
+                <h4 class="m-5">"{{{trackName}}}"</h4>
+            </div>
+            <div>
+                <form action="/favorites/add" method="post">
+                   <input type="hidden" name="name" value="{{artistName}}">
+                   <input type="hidden" name="artist" value="{{trackName}}">
+                   <button type="submit" class="btn btn-warning">Añadir canción a favoritos</button>       
+            </form>
+            </div>
+        </div>
+        <div class="p-5">
+            <textarea class="p-4" name="textarea" rows="20"  cols="50">{{lyric}}</textarea>
+        </div>
+    </div>
+</div>
 

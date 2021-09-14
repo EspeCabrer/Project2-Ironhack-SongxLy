@@ -1,4 +1,4 @@
-<div class= "totalAlbums">
+{{!-- <div class= "totalAlbums">
     <div class="row">
         {{#each tracksArr}}
              <div class="name">{{this.name}}</div>
@@ -14,4 +14,28 @@
 
         {{/each}}
     </div>
+</div> --}}
+
+<div class="tracks-page">
+<h2>Canciones</h2>
+    {{#each tracksArr}}
+        <ul class="d-flex align-items-center m-2 border bg-light mx-5">
+          <li class="name col-4">{{this.name}}</li>
+          <li class="col-4">
+              {{#if this.preview_url}}
+                    <audio controls src="{{this.preview_url}}"></audio>   
+              {{/if}}
+          </li>
+          <li class="col-2">
+              <a class="btn btn-info" href="/lyric/{{this.artists.0.name}}/{{this.name}}">Ver letra</a>  
+          </li>
+          <li class="col-2">
+            <form action="/favorites/add" method="post">
+                   <input type="hidden" name="name" value="{{this.name}}">
+                   <input type="hidden" name="artist" value="{{this.artists.0.name}}">
+                   <button type="submit" class="btn btn-warning">Añadir a favoritos</button>       
+            </form>
+          </li>
+        </ul>
+    {{/each}}
 </div>
