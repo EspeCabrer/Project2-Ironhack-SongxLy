@@ -1,0 +1,38 @@
+
+<div class= "tracks-search-page">
+    <h2>Resultados de: "{{trackNameSearch}}"</h2>
+    <div class= "totalArtists row row-cols-1 row-cols-md-4 g-4 text-center m-3">
+        {{#each tracksArr}}
+         <div class= "col">
+            <div class="card border-info border-3 mb-3 bg-light">
+                <div class= "card-header text-dark">
+                    <h5>{{artists.[0].name}}</h5>
+                </div>
+                 <img class="img" src="{{album.images.[0].url}}" alt="{{name}}">
+                 <p>{{name}}</p>
+                 {{#if this.preview_url}}
+                        <audio controls src="{{preview_url}}"></audio>   
+                  {{/if}}
+                 
+                <a class =" btn btn-light" href="/albums/{{artists.[0].id}}">Ver álbumes</a> 
+                 
+                 <li class="col-2 text-center m-1">
+                  <a class="btn btn-info" href="/lyric/{{artists.0.name}}/{{name}}">Ver letra</a>  
+              </li>
+              <li class="col-2 m-1 text-center">
+                <form action="/favorites/add" method="post">
+                       <input type="hidden" name="name" value="{{name}}">
+                       <input type="hidden" name="artist" value="{{artists.0.name}}">
+                       <button type="submit" class="btn btn-warning">Añadir a favoritos</button>       
+                </form>
+              </li>  
+
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{#if user}}
+    <p class="hide" id="check-user">true</p>
+{{/if}}

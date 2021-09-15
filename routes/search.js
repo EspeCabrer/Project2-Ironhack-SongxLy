@@ -102,43 +102,81 @@ router.get('/tracks/:albumID', (req, res, next) => {
 
 router.get('/lyric/:artistName/:trackName', (req, res) => {
 
-   //Navbar según estado Logged o Logout
-   let user
-   if(req.session.user){
-     user = req.session.user
-   }
- ///------///  
+   /* ---Navbar según estado Logged o Logout ---*/
+
+      let user
+      if(req.session.user){
+          user = req.session.user
+      }  
+   
+   /* ------------------- */
 
   let artistName = req.params.artistName;
   let trackName = req.params.trackName;
 
   let artistNameClean = artistName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-
   let trackNameClean = trackName.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
-
 
   let lyric = lyricsApi
                     .getLyrics(artistNameClean, trackNameClean)
                     .then(lyricObj => {
+                        const lyric = lyricObj.data.lyrics
+                        console.log("lyric :", lyric)
+                        return lyric
+                      })
+                    .catch(err => {
+                        console.log("ERROR: ", err)
+                    })
 
-                    const lyric = lyricObj.data.lyrics;
-         /*  console.log("lyricObj: ",lyricObj.data) */
-
-         /*  const replaced = lyric.replace(/\n/g, '<br >')
-          console.log("replaced :", replaced) */
-
-                      return lyric
-
-         /*  res.render('search/lyrics', {lyric}) */
-        })
-        .catch(err => {
-          console.log (artistName)
-          console.log("ERROR: ", err)
-        })
-
-        Promise.all([artistName, trackName, lyric, user])
+  Promise.all([artistName, trackName, lyric, user])
           .then(([artistName, trackName, lyric, user]) => res.render("search/lyrics", {artistName, trackName, lyric, user}))
 })
+
+
+//// BUSCAR CANCIONES ////
+
+router.get("/tracks", (req, res)=> {
+  //Navbar según estado Logged o Logout
+      let user
+      if(req.session.user){
+        user = req.session.user
+      }
+      const trackObjReq = req.query
+      const trackNameSearch = trackObjReq.track
+
+      let tracksArr = spotifyApi.searchTracks(`track:"${trackNameSearch}"`)
+                                      .then(data => {
+                                        let totalTracksArr = data.body.tracks.items
+                                        console.log("totalTracksArr :", totalTracksArr)
+                                        return totalTracksArr
+                                      })
+                                      .catch(err => console.log('The error while searching artists occurred: ', err))
+
+  Promise.all([tracksArr, trackNameSearch, user])
+          .then(([tracksArr,trackNameSearch, user]) => res.render('search/tracks-search', {tracksArr, trackNameSearch, user}))
+      })
+
+    
+    /* const trackSearch = req.query
+ */
+/* router.get("/artists", (req, res, next) => {
+
+ const artistObj = req.query
+    const artistsNameSearch = artistObj.artist
+
+    let totalArtistsArr = spotifyApi
+                                .searchArtists(artistsNameSearch)
+                                .then(data => {
+
+                                let totalArtistsArr = (data.body.artists.items)
+
+                                console.log(totalArtistsArr)
+
+                                return totalArtistsArr
+        }) */
+
+       /*  Promise.all([artistsNameSearch, totalArtistsArr, user])
+          .then(([artistsNameSearch, totalArtistsArr, user]) => res.render('search/artists-search-results', {artistsNameSearch, totalArtistsArr, user}))  */
 
 
 

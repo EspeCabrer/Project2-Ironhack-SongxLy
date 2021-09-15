@@ -9,6 +9,17 @@
   </form>
 </div>
 
+<div class= "search-page d-flex justify-content-center ">
+  <h2 class="p-2">Encuentra la canción</h2>
+  <form action="/tracks" method="GET" class= "d-flex flex-column align-items-center">
+    <label class= "m-3">
+       <input type="text" name="track" placeholder="Canción">
+    </label>
+    <button class="btn btn-light mt-5" type="submit">Buscar</button>
+  </form>
+</div>
+
+
 {{#if user}}
     <p class="hide" id="check-user">true</p>
 {{/if}}

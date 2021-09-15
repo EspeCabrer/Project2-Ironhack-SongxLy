@@ -14,8 +14,14 @@
             </div>
         </div>
         <div class="p-5">
-            <textarea class="p-3" name="textarea" rows="20"  cols="50">{{lyric}}</textarea>
+            {{#if lyric}}
+                <textarea class="p-3" name="textarea" rows="20"  cols="50">{{lyric}}</textarea>
+            {{else}}
+                <p>Uuups, no se ha encontrado la letra de esta canción. ¡SORRY!</p>
+            {{/if}}
+            
         </div>
+        
     </div>
 </div>
 
