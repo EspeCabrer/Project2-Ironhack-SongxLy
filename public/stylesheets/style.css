@@ -146,7 +146,8 @@ padding: 20px;
     font-size: 1.5em;
 }
 
-.card {
+.artists-page .card,
+.albums-page .card {
     width: 18rem;
 }
 
@@ -225,4 +226,83 @@ padding: 20px;
     .flex-md-equal>* {
         flex: 1;
     }
+}
+
+.signup-page,
+.login-page {
+height: 90vh;
+background-color: rgb(198,232,226);
+}
+
+.container-signup {
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url(../images/bg-auriculares.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.container-login{
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    background-image: url(../images/bg-luces.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+}
+
+.container-register,
+.container-acceso{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 500px;
+    background-color: rgba(0,0,0,0.5) !important;
+    border: 1px black solid;
+    }
+    
+.signup-page form,
+.login-page form {
+    height: 200px
+}
+
+.signup-page span,
+.login-page span {
+    padding: 10px;
+    color: white;
+    font-size: 25px;
+}
+
+.signup-page button,
+.login-page button {
+    height: 40px;
+    width: 100px;
+}
+
+.user-password-labels input{
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+.user-password-labels{
+    margin: 0 35px 0 35px;
+   
+    
+}
+
+.signup-page .title,
+.login-page .title {
+    height:90px;
+}
+.signup-page h2,
+.login-page h2 { 
+    color: white
 }

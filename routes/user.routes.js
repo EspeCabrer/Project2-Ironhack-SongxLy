@@ -11,6 +11,22 @@ const spotifyApi = new SpotifyWebApi({
     clientSecret: process.env.CLIENT_SECRET
   });
 
+///Visualizar favoritos al perfil del usuario////
+
+router.get("/profile", isLoggedIn, (req, res, next) =>{
+
+    User.findById(req.user._id)
+        .then((user) => {
+                let userTracks = user.favorites
+                res.render("profile", {userTracks});
+         })
+   
+  
+  })
+
+
+/// Añadir canción a favoritos
+
  router.post("/favorites/add", isLoggedIn, (req, res)=> {
 
     const {name, artist} = req.body
@@ -43,53 +59,17 @@ const spotifyApi = new SpotifyWebApi({
         .catch((err) => { console.log("ERROR: ", err)})
  }); 
 
-/* router.post("/add-favorite", isLoggedIn ,(req, res) =>{
-    const query = { name, status, species, gender, image, apiId } = req.body
-    const idToCheck = req.body.apiId;
-        Character.find({apiId: idToCheck})
-        .then (charArray => {
-            //comprobar si ese apiId ya esta en db characters
-            if (charArray.length === 0) {
-                Character
-                    .create(query)
-                    .then(result => {
-                      User
-                        .findByIdAndUpdate(req.user._id,{$push : {favorites : result._id}})
-                        .then(()=>{
-                            res.redirect("/characters")
-                        })
-                    })
-                    .catch(err => console.log(err))
-            } else {
-                User
-                .findById(req.user._id)
-                .then((user)=>{
-                    if (!user.favorites.includes(charArray[0]._id)){
-                        User
-                        .findByIdAndUpdate(req.user._id,{$push : {favorites : charArray[0]._id}})
-                        .then(()=>{
-                            res.redirect("/characters")
-                        })
-                    }else{res.redirect("/characters")}
-                })
-                .catch((err)=>{
-                console.log(err)
-                })
-                
-                
-                
-            }
-        }) 
-    })
+
+
     
     
-    router.post("/delete-favorite",isLoggedIn,(req,res)=>{
+  /*   router.post("/delete-favorite",isLoggedIn,(req,res)=>{
         const {id} = req.body
         User.findByIdAndUpdate(req.user._id,{$pull : {favorites : id}})
         .then(()=>{
             res.redirect("/profile")
         })
         .catch(err => console.log(err))
-    }) */
+    })  */
 
 module.exports = router;

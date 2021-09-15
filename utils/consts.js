@@ -1,3 +1,4 @@
-const MONGO_URI = process.env.MONGODB_URI || "mongodb://localhost/proyect-2";
+ const MONGO_URI = process.env.DB_REMOTE || "mongodb://localhost/proyect-2";
 
-module.exports = MONGO_URI;
+ module.exports = MONGO_URI; 
+ 
