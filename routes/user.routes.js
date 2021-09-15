@@ -15,11 +15,21 @@ const spotifyApi = new SpotifyWebApi({
 
 router.get("/profile", isLoggedIn, (req, res, next) =>{
 
-    User.findById(req.user._id)
-        .then((user) => {
-                let userTracks = user.favorites
+    //Navbar según estado Logged o Logout
+      let user
+      if(req.session.user){
+        user = req.session.user
+          }
+    ///------///  
+
+   let userTracks = User.findById(req.user._id)
+                        .then((user) => {
+                        let userTracks = user.favorites
+                        return userTracks
                 res.render("profile", {userTracks});
          })
+    Promise.all([userTracks,user])
+            .then(([userTracks,user]) => res.render("profile", {userTracks, user}))
    
   
   })

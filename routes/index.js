@@ -15,7 +15,14 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/search", (req, res, next) => {
-  res.render("search/search")
+  
+  if(req.session.user){
+    const user = req.session.user
+    res.render("search/search", {user});
+  }
+  else {
+  res.render("search/search");
+  }
 })
 
 module.exports = router;

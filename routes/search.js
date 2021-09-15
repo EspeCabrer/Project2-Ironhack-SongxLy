@@ -23,6 +23,14 @@ const spotifyApi = new SpotifyWebApi({
 
 router.get("/artists", (req, res, next) => {
 
+  //Navbar según estado Logged o Logout
+    let user
+    if(req.session.user){
+       user = req.session.user
+    }
+
+  ///------///  
+
     const artistObj = req.query
     const artistsNameSearch = artistObj.artist
 
@@ -38,46 +46,68 @@ router.get("/artists", (req, res, next) => {
         })
         .catch(err => console.log('The error while searching artists occurred: ', err))
 
-        Promise.all([artistsNameSearch, totalArtistsArr])
-          .then(([artistsNameSearch, totalArtistsArr]) => res.render('search/artists-search-results', {artistsNameSearch, totalArtistsArr}))
+        Promise.all([artistsNameSearch, totalArtistsArr, user])
+          .then(([artistsNameSearch, totalArtistsArr, user]) => res.render('search/artists-search-results', {artistsNameSearch, totalArtistsArr, user}))
   }) 
 
 
 // Get Artist's Album
 
 router.get('/albums/:artistId', (req, res, next) => {
+
+//Navbar según estado Logged o Logout
+  let user
+  if(req.session.user){
+    user = req.session.user
+  }
+///------///  
+
   let artistID = req.params.artistId;
 
-  spotifyApi
-          .getArtistAlbums(artistID)
-          .then(album => {
-
-              let totalAlbumsArr = (album.body.items)
-
-              res.render('search/albums', {totalAlbumsArr})
-       })
-       
+  let totalAlbumsArr = spotifyApi
+                            .getArtistAlbums(artistID)
+                            .then(album => {
+                               let totalAlbumsArr = (album.body.items)
+                               return totalAlbumsArr
+                              })
+  Promise.all([totalAlbumsArr, user])
+          .then(([totalAlbumsArr, user]) => res.render('search/albums', {totalAlbumsArr, user})) 
     });
 
 // Get Tracks
 
 router.get('/tracks/:albumID', (req, res, next) => {
+
+  //Navbar según estado Logged o Logout
+  let user
+  if(req.session.user){
+    user = req.session.user
+  }
+///------///  
+
+
   let albumID = req.params.albumID;
 
-  spotifyApi
-          .getAlbumTracks(albumID)
-          .then(track => {
-
-              let tracksArr = (track.body.items)
-              console.log(tracksArr)
-             res.render('search/tracks', {tracksArr})
+  let tracksArr = spotifyApi
+                      .getAlbumTracks(albumID)
+                      .then(track => {
+                           let tracksArr = (track.body.items)
+                          return tracksArr
        })
-
+    Promise.all([tracksArr, user])
+         .then(([tracksArr, user]) => res.render('search/tracks', {tracksArr, user})) 
 })
 
 // Get Lyrics
 
 router.get('/lyric/:artistName/:trackName', (req, res) => {
+
+   //Navbar según estado Logged o Logout
+   let user
+   if(req.session.user){
+     user = req.session.user
+   }
+ ///------///  
 
   let artistName = req.params.artistName;
   let trackName = req.params.trackName;
@@ -106,8 +136,8 @@ router.get('/lyric/:artistName/:trackName', (req, res) => {
           console.log("ERROR: ", err)
         })
 
-        Promise.all([artistName, trackName, lyric])
-          .then(([artistName, trackName, lyric]) => res.render("search/lyrics", {artistName, trackName, lyric}))
+        Promise.all([artistName, trackName, lyric, user])
+          .then(([artistName, trackName, lyric, user]) => res.render("search/lyrics", {artistName, trackName, lyric, user}))
 })
 
 
