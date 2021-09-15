@@ -21,9 +21,12 @@
             <div class="col-md-6 p-lg-3 text-center w-75">
                 <h1 class="display-3 font-weight-normal py-4">Accede a tu cuenta</h1>
                 <p class="lead font-weight-normal">No pierdas las letras de canciones que más te gusten. Es gratis!</p>
-                <a class="btn btn-outline-secondary w-50 rounded-pill" href="#">Iniciar Sesión</a>
+                <a class="btn btn-outline-secondary w-50 rounded-pill" href="auth/login">Iniciar Sesión</a>
             </div>
         </div>
     </div>
 </div>
 
+{{#if user}}
+    <p class="hide" id="check-user">true</p>
+{{/if}}

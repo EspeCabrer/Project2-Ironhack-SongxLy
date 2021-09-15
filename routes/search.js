@@ -102,7 +102,7 @@ router.get('/lyric/:artistName/:trackName', (req, res) => {
          /*  res.render('search/lyrics', {lyric}) */
         })
         .catch(err => {
-          console.log (artistNameClean)
+          console.log (artistName)
           console.log("ERROR: ", err)
         })
 

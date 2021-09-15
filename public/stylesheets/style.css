@@ -9,7 +9,9 @@
 /* body {
   min-height: 90vh; 
 } */
-
+.hide{
+    display:none
+}
 
 .bd-placeholder-img {
     font-size: 1.125rem;
@@ -136,12 +138,15 @@ background-color: rgb(46,51,56);
 padding: 20px;
 }
 
-.artists-page h2, .albums-page h2, .tracks-page h2, .lyric-page h2 {
+.artists-page h2, .albums-page h2, .tracks-page h2 {
     padding: 30px 0 0 30px;
     font-size: 3em;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
 }
+
+
+
 .artists-page h5, .albums-page h5{
     font-size: 1.5em;
 }
@@ -183,7 +188,16 @@ padding: 20px;
 
 .lyric-page{
     height: 95vh;
+    color: rgb(98,32,70); 
 }
+
+.lyric-page h2 {
+    padding: 30px 0 0 30px;
+    font-size: 3em;
+    text-align: center;
+    color: rgb(98,32,70);
+}
+
 
 
 /* .product-device {

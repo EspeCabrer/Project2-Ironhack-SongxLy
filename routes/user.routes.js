@@ -46,13 +46,13 @@ router.get("/profile", isLoggedIn, (req, res, next) =>{
 
                 //Comprobar si la canción ya existe en favoritos
                 
-                if (user.favorites[i].name === nameCleaned && user.favorites[i].artist === artistCleaned) {
+                if (user.favorites[i].name === name && user.favorites[i].artist === artist) {
                          console.log("This song ya exists!")
                          return;
                         } 
                 }
             User
-                .findOneAndUpdate({_id: req.user._id},{$push : {favorites : {name: nameCleaned, artist: artistCleaned}}})
+                .findOneAndUpdate({_id: req.user._id},{$push : {favorites : {name: name, artist: artist}}})
                 .then(()=> console.log("UPDATED"))
                 .catch((err) => console.error(err));
                 })        
@@ -63,13 +63,15 @@ router.get("/profile", isLoggedIn, (req, res, next) =>{
 
     
     
-  /*   router.post("/delete-favorite",isLoggedIn,(req,res)=>{
-        const {id} = req.body
-        User.findByIdAndUpdate(req.user._id,{$pull : {favorites : id}})
-        .then(()=>{
-            res.redirect("/profile")
+     router.post("/favorites/delete",isLoggedIn,(req,res)=>{
+        const {name, artist} = req.body
+        
+        User
+            .findByIdAndUpdate(req.user._id,{$pull : {favorites : {name, artist}}})
+            .then(()=>{
+                res.redirect("/profile")
         })
         .catch(err => console.log(err))
-    })  */
+    })  
 
 module.exports = router;

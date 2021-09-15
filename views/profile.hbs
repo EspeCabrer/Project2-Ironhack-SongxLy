@@ -20,13 +20,13 @@ Canciones favoritas
               <li class="col-2 text-center m-1">
                   <a class="btn btn-info" href="/lyric/{{artist}}/{{name}}">Ver letra</a>  
               </li>
-              {{!-- <li class="col-2 m-1 text-center">
-                <form action="/favorites/add" method="post">
-                       <input type="hidden" name="name" value="{{this.name}}">
-                       <input type="hidden" name="artist" value="{{this.artists.0.name}}">
-                       <button type="submit" class="btn btn-warning">Añadir a favoritos</button>       
+               <li class="col-2 m-1 text-center">
+                <form action="/favorites/delete" method="post">
+                       <input type="hidden" name="name" value="{{name}}">
+                       <input type="hidden" name="artist" value="{{artist}}">
+                       <button type="submit" class="btn btn-danger">Borrar</button>       
                 </form> 
-              </li> --}}
+              </li> 
             </ul>
         {{/each}}
     </div>
