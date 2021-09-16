@@ -6,9 +6,10 @@
 
 }
 
-/* body {
-  min-height: 90vh; 
-} */
+  body {
+  min-height: 99vh; 
+  background-color: rgb(223, 159, 75);
+}  
 .hide{
     display:none
 }
@@ -28,9 +29,9 @@
     }
 }
 
-.container {
+/* .container {
     max-width: 960px;
-}
+} */
 
 input {
     padding: 15px;
@@ -56,18 +57,34 @@ input {
     text-decoration: none;
 }
 
+footer .icon{
+    color: rgba(255, 255, 255, 0.493);
+    text-decoration: none;
+}
+footer .icon:hover {
+    color:white;
+    text-decoration: none;
+
+}
+
 /* INDEX VIEW */
 
-/* .ppal-page {
-    height: 90vh;
+ .ppal-page {
 
-} */
+   height: 90vh;
+   background-size: cover;
+   background-color:rgb(98,32,70);
+   display: flex;
+   flex-direction:column;
+
+} 
 
 .index-description {
     background-image: url(../images/bg-luces.jpeg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
+    height: 50%
 }
 
 .index-description h1{
@@ -83,6 +100,7 @@ input {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    height: 50%;
 
 }
 

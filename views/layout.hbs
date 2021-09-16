@@ -6,28 +6,39 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
       <title>{{title}}</title>
-      <link rel="stylesheet" href="/stylesheets/style.css" />
-      <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/product/">
+      <link rel="stylesheet" href="/stylesheets/style.css" /> 
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+      <link  rel="icon"   href="https://img.icons8.com/office/30/000000/musical.png" type="image/png" />
+     {{!--  <a href="https://icons8.com/icon/33120/musical">Musical icon by Icons8</a> --}}
+     {{!--  <link rel="canonical" href="https://v5.getbootstrap.com/docs/5.0/examples/product/"> --}}
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      {{!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+        integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> --}}
+    {{!--   <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        crossorigin="anonymous"></script> --}}
+      {{!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
         integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script> 
+        crossorigin="anonymous"></script>  --}}
    </head>
 
 <body>
 
 <nav class="navbar navbar-dark bg-gradient site-header sticky-top py-1">
   <div class="container-fluid">
-    <a href="/" class="navbar-brand px-4">SongxLy</a>
-    <div class="d-flex" id="login-or-profile">
+      <div class="d-flex align-items-center px-3" id="logo">
+         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+            width="40" height="40"
+            viewBox="0 0 172 172"
+            style=" fill:#000000;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g><path d="M86,165.55c-43.8643,0 -79.55,-35.6857 -79.55,-79.55c0,-43.8643 35.6857,-79.55 79.55,-79.55c43.8643,0 79.55,35.6857 79.55,79.55c0,43.8643 -35.6857,79.55 -79.55,79.55z" fill="#622046"></path><path d="M86,8.6c42.6775,0 77.4,34.7225 77.4,77.4c0,42.6775 -34.7225,77.4 -77.4,77.4c-42.6775,0 -77.4,-34.7225 -77.4,-77.4c0,-42.6775 34.7225,-77.4 77.4,-77.4M86,4.3c-45.1199,0 -81.7,36.5801 -81.7,81.7c0,45.1199 36.5801,81.7 81.7,81.7c45.1199,0 81.7,-36.5801 81.7,-81.7c0,-45.1199 -36.5801,-81.7 -81.7,-81.7z" fill="#fbc0be"></path><g fill="#c6e8e2"><path d="M75.25,131.15c-11.8551,0 -21.5,-9.6449 -21.5,-21.5c0,-11.8551 9.6449,-21.5 21.5,-21.5c3.4185,0 6.708,0.7998 9.7696,2.3693l3.1304,1.6039v-54.2445l30.1,15.05v16.6582l-21.5,-10.9908v52.3224l-0.0989,0.688c-1.0062,11.1413 -10.2039,19.5435 -21.4011,19.5435z"></path><path d="M90.3,41.3574l25.8,12.9v11.8164l-15.2435,-7.7916l-6.2565,-3.1949v7.0262v48.2933l-0.0903,1.0062c-0.9073,10.0276 -9.1848,17.587 -19.2597,17.587c-10.6683,0 -19.35,-8.6817 -19.35,-19.35c0,-10.6683 8.6817,-19.35 19.35,-19.35c3.0702,0 6.0286,0.7181 8.7892,2.1285l6.2608,3.2035v-7.0305v-47.2441M86,34.4v54.2015c-3.2293,-1.6512 -6.8757,-2.6015 -10.75,-2.6015c-13.0634,0 -23.65,10.5866 -23.65,23.65c0,13.0634 10.5866,23.65 23.65,23.65c12.3367,0 22.4546,-9.4471 23.5425,-21.5h0.1075v-49.6865l21.5,10.9865v-21.5l-34.4,-17.2z"></path></g></g></g></svg>
+         
+         
+         <a href="/" class="navbar-brand px-4">SongxLy</a>
+      </div>
+      <div class="d-flex" id="login-or-profile">
        {{!--   <a class="py-2 p-3  d-none d-md-inline-block" href="/auth/signup">Registrarse</a>
          <a class="py-2 p-3 d-none d-md-inline-block" href="/auth/login">Iniciar sesión</a> --}}
-    </div>
+      </div>
   </div>
 </nav>
    
@@ -37,17 +48,20 @@
 <footer class="d-flex flex-wrap navbar navbar-fixed-bottom justify-content-between align-items-center py-3 border-top bg-dark text-white-50">
    <div class= "col-md-4 d-flex align-items-center">
       {{!-- <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">Imagen icono</a> --}}
-      <span class=" px-5">Made by Espe Cabrer</span>
+      <span class=" px-5">© Developed by Espe Cabrer, 2021</span>
    </div>
-   <ul class= "nav col-md4 justify-content-end list-unstyled d-flex px-5">
-      <li class="ms3 px-3">
-         <a class="linkedin-icon" href="#">
-            icono linkedin
+   <ul class= "nav col-md4 justify-content-end align-items-center list-unstyled d-flex px-5">
+      <li class="px-3">
+         <a class="icon" href="https://icons8.com/icon/33120/musical">Musical icon by Icons8</a>
+      <li>
+      <li class="px-2">
+         <a class="linkedin icon" href="https://www.linkedin.com/in/espe-cabrer-0a930011a/">
+            <i class="fab fa-linkedin fa-2x"></i>
          </a>
       </li>
-      <li class="ms3 px-3">
-         <a class="github-icon" href="#">
-            icono github
+      <li class="px-2">
+         <a class="github icon" href="https://github.com/especabrer">
+            <i class="fab fa-github-alt fa-2x"></i>
          </a>
       </li>
    </ul>
