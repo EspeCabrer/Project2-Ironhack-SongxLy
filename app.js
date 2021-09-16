@@ -31,10 +31,10 @@ const spotifyApi = new SpotifyWebApi({
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
-const projectName = "proyect-2";
+const projectName = "sonxLy";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.title = `${capitalized(projectName)}`;
 
 /* 
 app.use((req,res,next) => {
