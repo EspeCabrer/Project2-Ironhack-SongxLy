@@ -1,25 +1,31 @@
+<div class= "search-page d-flex flex-column justify-content-center" >
+  <div class= "search-track d-flex justify-content-center align-items-center">
+    <form action="/tracks" method="GET" class= "d-flex align-items-center"> 
+      <input class="m-3" type="text" name="track" placeholder="Búsqueda por canción">
+      <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
 
-<div class= "search-page d-flex justify-content-center ">
-  <h2 class="p-2">Encuentra a tu artista</h2>
-  <form action="/artists" method="GET" class= "d-flex flex-column align-items-center">
-    <label class= "m-3">
-       <input type="text" name="artist" placeholder="Nombre del artista">
-    </label>
-    <button class="btn btn-light mt-5" type="submit">Buscar</button>
-  </form>
+  <div class= "search-artist d-flex justify-content-center align-items-center">
+    <form action="/artists" method="GET" class= "d-flex align-items-center"> 
+      <input class="m-3" type="text" name="artist" placeholder="Búsqueda por artista">
+      <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+    </form>
+  </div>
+
+
+
+  {{!-- <div class= " d-flex justify-content-center ">
+    <h2 class="p-2">Encuentra la canción</h2>
+    <form action="/tracks" method="GET" class= "d-flex flex-column align-items-center">
+      <label class= "m-3">
+         <input type="text" name="track" placeholder="Búsqueda por canción">
+      </label>
+      <button class="btn btn-light" type="submit">Buscar</button>
+    </form>
+  </div>
+ --}}
 </div>
 
-<div class= "search-page d-flex justify-content-center ">
-  <h2 class="p-2">Encuentra la canción</h2>
-  <form action="/tracks" method="GET" class= "d-flex flex-column align-items-center">
-    <label class= "m-3">
-       <input type="text" name="track" placeholder="Canción">
-    </label>
-    <button class="btn btn-light mt-5" type="submit">Buscar</button>
-  </form>
-</div>
 
 
-{{#if user}}
-    <p class="hide" id="check-user">true</p>
-{{/if}}

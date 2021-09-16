@@ -87,10 +87,6 @@ footer .icon:hover {
     height: 50%
 }
 
-.index-description h1{
-    font-size: 82px;
-    font-family:Georgia, 'Times New Roman', Times, serif
-}
 
 .index-description p {
     font-size: 27px;
@@ -103,6 +99,7 @@ footer .icon:hover {
     height: 50%;
 
 }
+
 
 /* .index-search{
     background-image: url(../images/abstract-yellow.jpeg);
@@ -120,10 +117,6 @@ footer .icon:hover {
         height: 90vh;
         background-size: cover;
         color:rgb(98,32,70);
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items:center;
       }
 
 .search-page form {
@@ -141,8 +134,14 @@ footer .icon:hover {
 }
 
 .search-page button{
-    width: 200px;
+    width: 50px;
     height: 50px;
+    background-color: rgb(98,32,70);
+    color: white
+}
+
+.search-page button:hover{
+    color:rgb(98,32,70);
 }
       
       /* .pag-ppal a{
