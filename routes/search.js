@@ -92,6 +92,7 @@ router.get('/tracks/:albumID', (req, res, next) => {
                       .getAlbumTracks(albumID)
                       .then(track => {
                            let tracksArr = (track.body.items)
+                           console.log("TRACKS ARR :" , tracksArr)
                           return tracksArr
        })
     Promise.all([tracksArr, user])
@@ -121,7 +122,6 @@ router.get('/lyric/:artistName/:trackName', (req, res) => {
                     .getLyrics(artistNameClean, trackNameClean)
                     .then(lyricObj => {
                         const lyric = lyricObj.data.lyrics
-                        console.log("lyric :", lyric)
                         return lyric
                       })
                     .catch(err => {

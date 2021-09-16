@@ -1,5 +1,5 @@
 <div class= "albums-page">
-    <h2>ÁLBUMES</h5>
+    <h2>Álbumes</h5>
     <div class= "totalAlbums row row-cols-1 row-cols-md-4 g-4 text-center m-3">
         {{#each totalAlbumsArr}}
          <div class= "col">
@@ -8,7 +8,7 @@
                     <h5 class="text-dark">{{this.name}}</h5>
                 </div>
                  <img class="img" src="{{this.images.[0].url}}" alt="{{this.name}}">
-                 <a class ="btn btn-light" href="/tracks/{{this.id}}">Ver canciones</a>   
+                 <a class ="btn btn-outline-secondary" href="/tracks/{{this.id}}">Ver canciones</a>   
             </div>
         </div>
         {{/each}}

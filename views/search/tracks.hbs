@@ -1,40 +1,23 @@
-{{!-- <div class= "totalAlbums">
-    <div class="row">
-        {{#each tracksArr}}
-             <div class="name">{{this.name}}</div>
-             <audio controls src="{{this.preview_url}}"></audio>      
-             <a href="/lyric/{{this.artists.0.name}}/{{this.name}}">Ver letra</a>  
-
-        <form action="/favorites/add" method="post">
-            <input type="hidden" name="name" value="{{this.name}}">
-            <input type="hidden" name="artist" value="{{this.artists.0.name}}">
-            <button type="submit" class="btn">Añadir a favoritos</button>
-        
-        </form>
-
-        {{/each}}
-    </div>
-</div> --}}
-
 <div class="tracks-page">
-<h2>Canciones</h2>
+<h2>Lista de canciones</h2>
     <div class= "tracks-list">
         {{#each tracksArr}}
             <ul class="d-flex align-items-center m-2 border bg-light mx-5">
+              <li class= "col-1">{{track_number}} -</li>
               <li class="name col-4">{{this.name}}</li>
-              <li class="col-4 text-center">
+              <li class="col-3 text-center">
                   {{#if this.preview_url}}
                         <audio controls src="{{this.preview_url}}"></audio>   
                   {{/if}}
               </li>
-              <li class="col-2 text-center m-1">
-                  <a class="btn btn-info" href="/lyric/{{this.artists.0.name}}/{{this.name}}">Ver letra</a>  
+              <li class="ver-letra col-2 text-center m-1">
+                  <a class="btn" href="/lyric/{{this.artists.0.name}}/{{this.name}}">Ver letra</a>  
               </li>
-              <li class="col-2 m-1 text-center">
+              <li class="add-favorite col-2 m-1 text-center">
                 <form action="/favorites/add" method="post">
                        <input type="hidden" name="name" value="{{this.name}}">
                        <input type="hidden" name="artist" value="{{this.artists.0.name}}">
-                       <button type="submit" class="btn btn-warning">Añadir a favoritos</button>       
+                       <button class="btn" type="submit">Añadir a favoritos</button>       
                 </form>
               </li>
             </ul>

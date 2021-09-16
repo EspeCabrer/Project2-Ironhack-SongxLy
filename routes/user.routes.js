@@ -58,12 +58,16 @@ router.get("/profile", isLoggedIn, (req, res, next) =>{
                 
                 if (user.favorites[i].name === name && user.favorites[i].artist === artist) {
                          console.log("This song ya exists!")
-                         return;
+                         res.redirect("/profile")
+                         return
                         } 
                 }
             User
                 .findOneAndUpdate({_id: req.user._id},{$push : {favorites : {name: name, artist: artist}}})
-                .then(()=> console.log("UPDATED"))
+                .then(()=> { 
+                  console.log("UPDATED");
+                    res.redirect("/profile")
+                  })
                 .catch((err) => console.error(err));
                 })        
         .catch((err) => { console.log("ERROR: ", err)})

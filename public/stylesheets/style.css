@@ -73,7 +73,6 @@ footer .icon:hover {
 
    height: 90vh;
    background-size: cover;
-   background-color:rgb(98,32,70);
    display: flex;
    flex-direction:column;
 
@@ -112,11 +111,9 @@ footer .icon:hover {
 
 /* SEARCH VIEW */
 .search-page{
-        
-        background-image: url(/images/bg-abstract-blue.jpeg);
+        background-image: url(/images/bg-abstract-blue.jpeg); 
         height: 90vh;
         background-size: cover;
-        color:rgb(98,32,70);
       }
 
 .search-page form {
@@ -154,16 +151,18 @@ footer .icon:hover {
       
 
 /* ARTISTS VIEW */
-.artists-page  {
-background-color: rgb(46,51,56);
+.artists-page,
+.albums-page,
+.tracks-search-page {
+background-color: rgba(255, 255, 255, 0.658);
 padding: 20px;
 }
 
-.artists-page h2, .albums-page h2, .tracks-page h2 {
+.artists-page h2, .albums-page h2, .tracks-page h2, .tracks-search-page h2 {
     padding: 30px 0 0 30px;
     font-size: 3em;
     text-align: center;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(41, 39, 39, 0.521);
 }
 
 
@@ -175,12 +174,17 @@ padding: 20px;
 .artists-page .card,
 .albums-page .card {
     width: 18rem;
+    border-width: 3px;
+    border-color: #eec18d;
 }
 
-.albums-page{
-    background-color:rgb(46,51,56);
-    padding: 20px;
+button:hover {
+    color:#61053F
 }
+a:hover {
+    color:#61053F
+}
+
 
 /* .albums-page .card{
     background-color: rgb(250, 180, 177);
@@ -192,81 +196,125 @@ padding: 20px;
     list-style: none;
 }
 
-.tracks-page {
-    background-color: rgb(46,51,56);
+.tracks-page,
+.profile-page {
+    background-color: rgb(230, 235, 240);
     padding: 20px;
 }
 
-.tracks-page h2 {
+.tracks-page h2,
+.profile-page h2 {
     padding: 30px 0 30px 30px;
     margin-bottom: 20px;
     font-size: 3em;
     text-align: center; 
-    color: rgb(198, 232, 226);
+    color: rgb(44, 51, 50);
 }
+
+/* TRACKS SEARCH VIEW */
+
+.tracks-search-page .card{
+    border-color: rgb(137, 199, 188);
+    border-width: 3px;
+}
+
+/* PROFILE VIEW */
+
+.profile-page .card{
+    border-color: rgba(98, 32, 70, 0.541);
+    border-width: 3px;
+}
+
+.ver-letra a:hover{
+    background-color: rgb(98,32,70,0.5)
+}
+
+
+
+
+
+/* 
+.btn-album a {
+    border: 2px, solid, rgb(137, 199, 188);
+
+    
+    background-color: rgb(251,192,190)
+} */
+.ver-letra a{
+    background-color:rgb(137, 199, 188);
+}
+
+
+.tracks-search-page a:hover{
+    background-color:rgba(98,32,70,0.5)
+}
+
+.add-favorite button{
+    background-color: rgba(255, 192, 46, 0.486);
+}
+.add-favorite button:hover{
+    background-color:rgba(98,32,70,0.5)
+}
+
 
 /* LYRIC-PAGE */
 
 .lyric-page{
     height: 95vh;
-    color: rgb(98,32,70); 
+    background-image: url(../images/img-micro.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.lyric-page-name-artist {
+    background-color:#ffffff83;
+    width: 500px;
+    height: 500px;
 }
 
 .lyric-page h2 {
     padding: 30px 0 0 30px;
     font-size: 3em;
     text-align: center;
-    color: rgb(98,32,70);
+    color: rgb(235, 230, 233);
+}
+
+.lyric-not-found{
+    height: 550px;
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.521);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding:50px; 
+}
+
+.error-msg{
+    color: white;
+    font-size: 2em;
 }
 
 
 
-/* .product-device {
-    position: absolute;
-    right: 10%;
-    bottom: -30%;
-    width: 300px;
-    height: 540px;
-    background-color: #333;
-    border-radius: 21px;
-    transform: rotate(30deg);
-}
-
-.product-device::before {
-    position: absolute;
-    top: 10%;
-    right: 10px;
-    bottom: 10%;
-    left: 10px;
-    content: "";
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 5px;
-} */
-
-/* .product-device-2 {
-    top: -25%;
-    right: auto;
-    bottom: 0;
-    left: 5%;
-    background-color: #e5e5e5;
-} */
-
-
-
-.flex-equal>* {
+/* .flex-equal>* {
     flex: 1;
-}
+} */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .flex-md-equal>* {
         flex: 1;
     }
-}
+} */
+
+/* SIGNUP & LOGIN VIEW */
 
 .signup-page,
 .login-page {
 height: 90vh;
 background-color: rgb(198,232,226);
+color: white;
 }
 
 .container-signup {
@@ -289,8 +337,6 @@ background-color: rgb(198,232,226);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-
 }
 
 .container-register,
@@ -328,9 +374,7 @@ background-color: rgb(198,232,226);
 }
 
 .user-password-labels{
-    margin: 0 35px 0 35px;
-   
-    
+    margin: 0 35px 0 35px;  
 }
 
 .signup-page .title,
@@ -340,4 +384,13 @@ background-color: rgb(198,232,226);
 .signup-page h2,
 .login-page h2 { 
     color: white
+}
+.signup-page a,
+.login-page a{
+    color: rgb(194, 177, 177);
+    text-decoration: none;
+}
+.signup-page a:hover,
+.login-page a:hover{
+    color: rgb(248, 248, 248);
 }
