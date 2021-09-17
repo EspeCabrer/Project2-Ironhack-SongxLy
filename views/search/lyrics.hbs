@@ -15,7 +15,7 @@
         </div>
         <div class="lyric-not-found m-5">
             {{#if lyric}}
-                <textarea class="p-3" name="textarea" rows="20"  cols="50">{{lyric}}</textarea>
+                <textarea disabled id="textarea" class="p-3" name="textarea" rows="20"  cols="50">{{lyric}}</textarea>
             {{else}}
                 <p class="error-msg">Uuups, no se ha encontrado la letra de esta canción. ¡SORRY!</p>
             {{/if}}

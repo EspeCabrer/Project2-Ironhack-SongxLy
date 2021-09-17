@@ -9,6 +9,7 @@
   body {
   min-height: 99vh; 
   background-color: rgb(223, 159, 75);
+  padding-top:58px;
 }  
 .hide{
     display:none
@@ -35,6 +36,7 @@
 
 input {
     padding: 15px;
+    outline: none;
 }
 
 /* Layaut */
@@ -117,13 +119,26 @@ footer .icon:hover {
       }
 
 .search-page form {
-    padding: 30px;
-
-}
-.search-page input{
+    padding: 30px 0px;
     width: 400px;
     height: 50px;
-    border-radius: 20px;
+    border-radius: 30px;
+    border: 1px solid rgb(98,32,70);
+    outline: none;
+    background-color: white;
+
+    margin-bottom: 50px;
+    display:flex;
+    justify-content: space-between;
+}
+.search-page input{
+    height:50px;
+    margin:0;
+    border:none;
+    outline:none;
+    
+    
+
 }
 
 .search-page h2{
@@ -131,15 +146,22 @@ footer .icon:hover {
 }
 
 .search-page button{
-    width: 50px;
-    height: 50px;
-    background-color: rgb(98,32,70);
-    color: white
+    width: 60px;
+    height: 60px;
+    border:none;
+    border-radius: 30px;
+
+    color:rgb(98,32,70);
+    background-color: white  
+
 }
 
 .search-page button:hover{
-    color:rgb(98,32,70);
+
+    background-color: rgb(98,32,70);
+    color: white;
 }
+
       
       /* .pag-ppal a{
         border: 1px solid black;
@@ -156,6 +178,7 @@ footer .icon:hover {
 .tracks-search-page {
 background-color: rgba(255, 255, 255, 0.658);
 padding: 20px;
+min-height: 85vh;
 }
 
 .artists-page h2, .albums-page h2, .tracks-page h2, .tracks-search-page h2 {
@@ -220,6 +243,10 @@ a:hover {
 
 /* PROFILE VIEW */
 
+.profile-page{
+    min-height: 87vh;
+}
+
 .profile-page .card{
     border-color: rgba(98, 32, 70, 0.541);
     border-width: 3px;
@@ -269,6 +296,11 @@ a:hover {
     text-align: center;
     color: rgb(235, 230, 233);
 }
+
+#textarea {
+    color: black;
+    background-color: white;
+    }
 
 .lyric-not-found{
     height: 550px;
