@@ -15,24 +15,6 @@
     display:none
 }
 
-/* .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-} */
-
-/* @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-        font-size: 3.5rem;
-    }
-} */
-
-/* .container {
-    max-width: 960px;
-} */
 
 input {
     padding: 15px;
@@ -43,15 +25,11 @@ input {
 
 .site-header {
     background-color: #61053F;
-   /*  position: fixed; */
-/*     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px) */;
 }
 
 .site-header a {
     color: rgb(214, 214, 214);
     text-decoration: none;
-    /* transition: color .15s ease-in-out; */
 }
 
 .site-header a:hover {
@@ -101,15 +79,6 @@ footer .icon:hover {
 
 }
 
-
-/* .index-search{
-    background-image: url(../images/abstract-yellow.jpeg);
-    background-size: cover;
-} */
-
-/* .index-login {
-  background-color: #FFD399;
-} */
 
 /* SEARCH VIEW */
 .search-page{
@@ -162,15 +131,6 @@ footer .icon:hover {
     color: white;
 }
 
-      
-      /* .pag-ppal a{
-        border: 1px solid black;
-        margin: 30px;
-      }
-      .pag-ppal h1{
-        font-size: 8em;
-      } */
-      
 
 /* ARTISTS VIEW */
 .artists-page,
@@ -209,9 +169,6 @@ a:hover {
 }
 
 
-/* .albums-page .card{
-    background-color: rgb(250, 180, 177);
-} */
 
 /* TRACKS VIEW */
 
@@ -323,11 +280,6 @@ a:hover {
     flex: 1;
 } 
 
-/* @media (min-width: 768px) {
-    .flex-md-equal>* {
-        flex: 1;
-    }
-}
 
 /* SIGNUP & LOGIN VIEW */
 

@@ -25,8 +25,7 @@ router.get("/profile", isLoggedIn, (req, res, next) =>{
    let userTracks = User.findById(req.user._id)
                         .then((user) => {
                         let userTracks = user.favorites
-                        return userTracks
-                res.render("profile", {userTracks});
+                        return userTracks;
          })
     Promise.all([userTracks,user])
             .then(([userTracks,user]) => res.render("profile", {userTracks, user}))

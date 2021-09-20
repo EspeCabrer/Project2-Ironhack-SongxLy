@@ -156,28 +156,6 @@ router.get("/tracks", (req, res)=> {
           .then(([tracksArr,trackNameSearch, user]) => res.render('search/tracks-search', {tracksArr, trackNameSearch, user}))
       })
 
-    
-    /* const trackSearch = req.query
- */
-/* router.get("/artists", (req, res, next) => {
-
- const artistObj = req.query
-    const artistsNameSearch = artistObj.artist
-
-    let totalArtistsArr = spotifyApi
-                                .searchArtists(artistsNameSearch)
-                                .then(data => {
-
-                                let totalArtistsArr = (data.body.artists.items)
-
-                                console.log(totalArtistsArr)
-
-                                return totalArtistsArr
-        }) */
-
-       /*  Promise.all([artistsNameSearch, totalArtistsArr, user])
-          .then(([artistsNameSearch, totalArtistsArr, user]) => res.render('search/artists-search-results', {artistsNameSearch, totalArtistsArr, user}))  */
-
 
 
 module.exports = router;
